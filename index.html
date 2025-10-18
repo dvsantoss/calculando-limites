@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Limite do TADS</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .resultado {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e9f5ff;
+            border-left: 4px solid #007bff;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Analisador de Limite do TADS</h1>
+        <label>Função f(x):</label>
+        <input type="text" id="funcao" placeholder="Exemplo: (x^2 - 1)/(x - 1)">
+
+        <label>Ponto a:</label>
+        <input type="text" id="ponto" placeholder="Exemplo: 1 ou Infinity ou -Infinity">
+
+        <button onclick="calcularLimite()">Calcular Limite</button>
+
+        <div id="saida" class="resultado"></div>
+    </div>
+
+    <script>
+        // pegando o que o usuário digitou e tentando calcular o limite
+
+        function calcularLimite() {
+            const funcaoInput = document.getElementById("funcao").value;
+            const pontoInput = document.getElementById("ponto").value;
+            const saida = document.getElementById("saida");
+
+            try {
+                const f = math.parse(funcaoInput).compile();
+                let ponto = (pontoInput.toLowerCase() === "infinity") ? Infinity :
+                    (pontoInput.toLowerCase() === "-infinity") ? -Infinity :
+                        parseFloat(pontoInput);
+
+                // primeiro: tenta substituição direta
+                let substituicao = f.evaluate({ x: ponto });
+
+                if (isNaN(substituicao) || substituicao === Infinity || substituicao === -Infinity) {
+                    // se não deu certo, testamos aproximar o limite
+                    let aproxEsq = f.evaluate({ x: ponto - 0.00001 });
+                    let aproxDir = f.evaluate({ x: ponto + 0.00001 });
+
+                    if (Math.abs(aproxEsq - aproxDir) < 0.0001) {
+                        saida.innerHTML = `<b>Limite encontrado:</b> ${aproxEsq.toFixed(4)} (aproximação)`;
+                    } else {
+                        saida.innerHTML = `<b>O limite não existe</b> (os laterais são diferentes).`;
+                    }
+                } else {
+                    saida.innerHTML = `<b>Resultado da substituição direta:</b> f(${ponto}) = ${substituicao}`;
+                }
+            } catch (err) {
+                saida.innerHTML = "Erro: verifique a função digitada.";
+            }
+        }
+    </script>
+</body>
+
+</html>
