@@ -206,11 +206,6 @@ flowchart TD
 
 <div align="center">
 
-### ⭐ Se este projeto foi útil, considere dar uma estrela! ⭐
-
-
----
-
 **📚 Desenvolvido com ❤️ para a disciplina de Matemática II - TADS**
 
 </div>
