@@ -5,11 +5,8 @@
 ![Matemática](https://img.shields.io/badge/Matemática-Cálculo-blue)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow)
 ![HTML5](https://img.shields.io/badge/HTML5-CSS3-orange)
-![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-green)
 
 **Uma ferramenta interativa para calcular limites de funções matemáticas**
-
-[🔗 Ver Demonstração](#-como-usar) • [📋 Pré-requisitos](#-pré-requisitos) • [🚀 Instalação](#-instalação) • [📖 Documentação](#-documentação)
 
 </div>
 
@@ -20,26 +17,26 @@
 Este projeto é uma **calculadora de limites** desenvolvida como atividade acadêmica para o curso de **TADS (Tecnologia em Análise e Desenvolvimento de Sistemas)**. A aplicação permite aos usuários calcular limites de funções matemáticas de forma intuitiva e interativa.
 
 ### 🎯 Objetivos
-- 📊 Facilitar o aprendizado de cálculo de limites
-- 🔍 Implementar algoritmos para análise de limites
-- 💻 Desenvolver uma interface web responsiva
-- 🧠 Aplicar conceitos matemáticos na programação
+- Facilitar o aprendizado de cálculo de limites
+- Implementar algoritmos para análise de limites
+- Desenvolver uma interface web responsiva
+- Aplicar conceitos matemáticos na programação
 
 ---
 
 ## ✨ Funcionalidades
 
 ### 🔢 Cálculo de Limites
-- ✅ **Substituição direta**: Calcula limites por substituição simples
-- 🎯 **Aproximação numérica**: Usa métodos de aproximação quando necessário
-- ♾️ **Limites infinitos**: Suporte para +∞ e -∞
-- 🔄 **Limites laterais**: Detecta diferenças entre limites à esquerda e direita
+- **Substituição direta**: Calcula limites por substituição simples
+- **Aproximação numérica**: Usa métodos de aproximação quando necessário
+- **Limites infinitos**: Suporte para +∞ e -∞
+- **Limites laterais**: Detecta diferenças entre limites à esquerda e direita
 
 ### 🎨 Interface
-- 📱 **Design responsivo**: Funciona em desktop e mobile
-- 🎨 **Interface intuitiva**: Fácil de usar para estudantes
-- ⚡ **Cálculo em tempo real**: Resultados instantâneos
-- 🎯 **Feedback visual**: Resultados destacados e organizados
+- **Design responsivo**: Funciona em desktop e mobile
+- **Interface intuitiva**: Fácil de usar para estudantes
+- **Cálculo em tempo real**: Resultados instantâneos
+- **Feedback visual**: Resultados destacados e organizados
 
 ---
 
@@ -159,10 +156,10 @@ flowchart TD
 
 ### 📚 Conceitos Matemáticos
 
-- **🔢 Substituição Direta**: `lim f(x) = f(a)`
-- **🎯 Aproximação**: `lim f(x) ≈ f(a ± ε)`
-- **📏 Limites Laterais**: `lim⁻` e `lim⁺`
-- **♾️ Infinito**: Comportamento assintótico
+- **Substituição Direta**: `lim f(x) = f(a)`
+- **Aproximação**: `lim f(x) ≈ f(a ± ε)`
+- **Limites Laterais**: `lim⁻` e `lim⁺`
+- **Infinito**: Comportamento assintótico
 
 ---
 
